@@ -1,0 +1,184 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e0f7fa;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #00796b;
+}
+
+.water-visual {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cup {
+    width: 100px;
+    height: 150px;
+    background-color: #b2ebf2;
+    border: 2px solid #00796b;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.water {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #4dd0e1;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.water::before,
+.water::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 200%;
+    height: 20px;
+    background-color: rgba(0, 150, 136, 0.5);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: wave 4s infinite linear alternate;
+}
+
+.water::after {
+    top: -15px;
+    opacity: 0.5;
+    animation: wave 6s infinite linear alternate;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+.water-goal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+}
+
+#goal-input {
+    font-size: 1em;
+    width: 50px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+    border-bottom: 1px solid #ffffff;
+}
+
+/* Remove arrows in Chrome, Safari, Edge, and Opera */
+#goal-input::-webkit-outer-spin-button,
+#goal-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove arrows in Firefox */
+#goal-input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Remove arrows in Chrome, Safari, Edge, and Opera */
+#custom-amount::-webkit-outer-spin-button,
+#custom-amount::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove arrows in Firefox */
+#custom-amount[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+
+
+#water-amount {
+    font-size: 1.5em;
+    color: #00796b;
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+input[type="number"] {
+    padding: 10px;
+    width: 70%;
+    border: 2px solid #b2ebf2;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-right: 5px;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #00796b;
+}
+
+#custom-amount-button {
+    padding: 10px 20px;
+}

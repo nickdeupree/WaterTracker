@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tracker</title>
+    <link rel="stylesheet"href="styles.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Water Tracker</h1>
+        <div class="water-visual">
+            <div class="cup">
+                <div class="water" id="water-level"></div>
+                <div class="water-goal">
+                    <span id="goal-display" onclick="editGoal()"></span>
+                    <input type="number" id="goal-input" min="1" style="display: none;" />
+                </div>
+            </div>
+            
+            <h2 id="water-amount">0 oz</h2>
+        </div>
+        <div class="form-group">
+            <button id="eight-oz" onclick="addWater(8)">8 oz</button>
+            <button id="twelve-oz" onclick="addWater(12)">12 oz</button>
+            <button id="sixteen-oz" onclick="addWater(16)">16 oz</button>
+            <button id="thirty-two-oz" onclick="addWater(32)">32 oz</button>
+        </div>
+        <div class="form-group">
+            <input type="number" id="custom-amount" placeholder="Custom Amount">
+            <button id="custom-amount-button" onclick="addCustomWater()">Add</button>
+        </div>
+        <div class="form-group">
+            <button id="reset-button" onclick="resetWater()">Reset</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
